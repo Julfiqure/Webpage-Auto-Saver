@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Webpage Auto Saver",
+    "version": "1.0",
+    "description": "Automatically saves web pages from specific domains.",
+    "permissions": ["tabs", "storage", "downloads", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": [
+        "https://google.com/*",
+        "https://*.amazon.com/*",
+        "https://*.facebook.com/*",
+        "https://*.youtube.com/*"
+    ],
+
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    }
+  }
