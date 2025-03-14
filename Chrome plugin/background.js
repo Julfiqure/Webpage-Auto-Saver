@@ -22,13 +22,13 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       const reader = new FileReader();
       reader.onloadend = function () {
           chrome.downloads.download({
-              url: reader.result,  // Use the Data URL instead
+              url: reader.result, 
               filename: `saved_pages/${request.filename}.html`,
               saveAs: false
           });
           sendResponse({ status: "Page saved successfully!" });
       };
-      reader.readAsDataURL(blob);  // Convert blob to Data URL
-      return true; // Keeps sendResponse active for async operation
+      reader.readAsDataURL(blob);
+      return true;
   }
 });
