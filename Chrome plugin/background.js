@@ -18,7 +18,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "savePage") {
       const blob = new Blob([request.html], { type: "text/html" });
 
-      // Read the blob as a Data URL
       const reader = new FileReader();
       reader.onloadend = function () {
           chrome.downloads.download({
